@@ -1,6 +1,5 @@
 import logo from '../nike_logo.png';
 import '../styles.css';
-import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from './cart_widge';
 
 export default function NavBar() {
