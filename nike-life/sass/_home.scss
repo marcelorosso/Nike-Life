@@ -118,4 +118,45 @@
     }
 }
   
-//-- Cards Menu --//
+//-- Product List --//
+
+
+.card {
+    align-items: center;
+    max-width: 30% !important;
+
+    .cardImg {
+        img {
+            width: 100%;
+        }
+    }
+    .cardHeader {
+        text-align: center;
+    }
+}
+
+//-- Card Details --//
+
+.cardDetail {
+    background-color: #0062be;
+    display: flex;
+    border-bottom: 0.5px solid white;
+
+    .textDetail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .cardHeader {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .sizes {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

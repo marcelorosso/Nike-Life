@@ -1,22 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "../styles.css";
-import Count from './item_count';
 
 const Card = (props) => {
   return (
     <div className='card'>
         <div className="cardImg">
-        <img src={props.img} alt="productImages" />
+        <img src={props.grid_picture_url} alt="productImages" />
         </div>
         <div className="cardHeader">
-            <h2>{props.product}</h2>
-            <p>{props.description}</p>
-            <p className="price"><span>{props.currency}</span>{props.price}</p>
-            <button className="btn btn-dark">Add to Cart</button>
+            <h2>{props.name}</h2>
+            <p>{props.category}</p>
+            <p className="price"><span>$</span>{props.retail_price_cents}</p>
+            <Link to={`/detalle/${props.id}`}><button className="btn btn-dark">Details</button></Link>
         </div><br/>
-        <div>
-          <Count stock= {props.quantity}/>
-        </div>
     </div>
   )
 }

@@ -13,7 +13,6 @@ const ItemListContainer = () => {
             <h2> {greeting} </h2>
             <h1> Nike - Life </h1>
           </main> 
-          <ProductsList />
       </div>
     </>
   )

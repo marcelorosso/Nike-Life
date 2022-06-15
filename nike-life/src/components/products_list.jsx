@@ -2,13 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Card from './card';
 import logo from '../nike_logo.png';
 
-
-function useFetch() {
+export function useFetch() {
 
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("products/product_detail.json")
+        fetch("products/sneakers.json")
         .then(response => response.json())
         .then(data => setProducts(data))
     }, [])
@@ -29,7 +28,7 @@ function ProductsList() {
         setLoading(true)
         setTimeout(()=> {
             setLoading(false)
-        }, 4000)
+        }, 2000)
     }, [])
 
     return (
@@ -39,7 +38,7 @@ function ProductsList() {
                     loading ?
                     <>
                     <div className="d-flex align-items-center">
-                    <h4>Waiting for the products...</h4>
+                    <h4>Waiting for the products list...</h4>
                     <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
                     </div>   
                     <img src={logo} style={{"width": "100%", "maxHeight": "300px", "maxWidth": "400px"}} alt="pageLogo"></img>              
@@ -49,12 +48,11 @@ function ProductsList() {
 
                     products.map((shoes) => {
                     return <Card 
-                    key={shoes.id} 
-                    product={shoes.product} 
-                    img={shoes.img} 
-                    description={shoes.description}
-                    price={shoes.price}
-                    currency={shoes.currency}
+                    id={shoes.id} 
+                    name={shoes.name} 
+                    grid_picture_url={shoes.grid_picture_url} 
+                    category={shoes.category}
+                    retail_price_cents={shoes.retail_price_cents}
                     quantity={shoes.quantity} />
                 })}
             </div>
