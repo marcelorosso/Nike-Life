@@ -6,28 +6,25 @@ function useFetchDetail() {
 
     const [productDetail, setDetail] = useState([])
 
+    const getData = () => {
+        fetch("products/sneakers.json")
+        .then(response => response.json())
+        .then(data => setDetail(data))
+    }
+    
     useEffect(() => {
-        const fetchJSON = async () => {
-            const response = await fetch("products/sneakers.json")
-            let json = await response.json()
-            setDetail(json)
-        }
-
-        fetchJSON()
+        getData()
     }, [])
 
-    
-    console.log(productDetail)
+  console.log(productDetail)
+
   return productDetail
 }
-
 
 
 export default function ProductsDetail() {
 
     const productDetail = useFetchDetail()
-
-    console.log(productDetail)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
