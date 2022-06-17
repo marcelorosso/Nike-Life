@@ -1,8 +1,17 @@
 import React from 'react';
 import "../styles.css";
 import Count from './item_count';
+// import { useCartContext } from '../context/cartContext';
+
 
 const Details = (props) => {
+
+  // const {cart, addToCart} = useCartContext()
+
+  // const onAdd = (cant) => {
+  //   console.log(cant)
+  //   addToCart({...productos, cantidad: cant})
+  // }
   return (
     <div className='cardDetail'>
         <div className="imgDetail">
@@ -12,12 +21,20 @@ const Details = (props) => {
           <div className="cardHeader">
               <h2>{props.name}</h2>
               <p>{props.story_html}</p>
-              <div className='sizes'>{props.size_range}</div>
-              <p className="price"><span> Price: $</span>{props.retail_price_cents}</p>
-              <button className="btn btn-dark">Add To Cart</button>
+              <h4>Size Range</h4>
+              <select className="form-select" aria-label="Default select example">
+                <option>{props.size_range[0]}</option>
+                <option>{props.size_range[1]}</option>
+                <option>{props.size_range[2]}</option>
+                <option>{props.size_range[3]}</option>
+                <option>{props.size_range[4]}</option>
+            </select><br/>
+              <h5 className="price"><span> Cash Price: $</span>{props.retail_price_cents}</h5><br/>
+              
+              <Count stock= {props.quantity} />
           </div><br/>
           <div>
-            <Count stock= {props.quantity}/>
+          <button type="button" className="btn btn-outline-dark btn-lg">Buy Product</button>  
           </div>
         </div>
     </div>

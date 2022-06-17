@@ -1,35 +1,48 @@
 import React, {useState, useEffect} from 'react'
 import Card from './card';
 import logo from '../nike_logo.png';
+import { useParams } from 'react-router-dom';
 
 export function useFetch() {
 
-    const [products, setProducts] = useState([])
+    const {catId} = useParams()
+    console.log(catId)
 
+    const [products, setDetail] = useState([])
+    const [loading, setLoading] = useState(false)
+    
     useEffect(() => {
-        fetch("products/sneakers.json")
-        .then(response => response.json())
-        .then(data => setProducts(data))
-    }, [])
+        if (catId) {
+            fetch("/products/sneakers.json")
+            .then(response => response.json())
+            .then(data => setDetail(data.filter(prod => prod.brand_name === catId )))
+            setLoading(true)
+            setTimeout(()=> {
+                setLoading(false)
+            }, 2000)
+        
+        } else {
+            fetch("/products/sneakers.json")
+            .then(response => response.json())
+            .then(data => setDetail(data))
+            setLoading(true)
+            setTimeout(()=> {
+                setLoading(false)
+            }, 2000)
+        }  
+    }, [catId])
 
-    console.log(products)
-  return products
+  console.log(products)
+
+  return [products, loading]
 }
+
 
 
 
 function ProductsList() {
 
-    const products = useFetch()
-
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        setTimeout(()=> {
-            setLoading(false)
-        }, 2000)
-    }, [])
+    const [products, loading] = useFetch()
 
     return (
         <>
@@ -52,8 +65,7 @@ function ProductsList() {
                     name={shoes.name} 
                     grid_picture_url={shoes.grid_picture_url} 
                     category={shoes.category}
-                    retail_price_cents={shoes.retail_price_cents}
-                    quantity={shoes.quantity} />
+                    retail_price_cents={shoes.retail_price_cents}/>
                 })}
             </div>
         </>

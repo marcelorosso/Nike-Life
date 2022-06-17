@@ -1,66 +1,81 @@
 import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
 import logo from '../nike_logo.png';
 import Details from './itemDetail';
+// import Card from "./card"
+
 
 function useFetchDetail() {
 
-    const [productDetail, setDetail] = useState([])
+    const {id} = useParams()
+    console.log(id)
 
-    const getData = () => {
-        fetch("products/sneakers.json")
-        .then(response => response.json())
-        .then(data => setDetail(data))
-    }
+    const [productDetail, setDetail] = useState([])
+    const [loading, setLoading] = useState(false)
     
     useEffect(() => {
-        getData()
-    }, [])
+        if (id) {
+            fetch("/products/sneakers.json")
+            .then(response => response.json())
+            .then(data => {
+                setDetail(data.filter((prod)=> prod.id === parseFloat(id)))
+                setLoading(true)
+            })
+            setTimeout(()=> {
+                setLoading(false)
+            }, 2000)
+
+        } else {
+            fetch("/products/sneakers.json")
+            .then(response => response.json())
+            .then(data => {
+                setDetail(data)
+                setLoading(true)
+            })
+            setTimeout(()=> {
+                setLoading(false)
+            }, 2000)
+        }
+    }, [id])
+    
 
   console.log(productDetail)
 
-  return productDetail
+  return [productDetail, loading]
 }
 
 
 export default function ProductsDetail() {
 
-    const productDetail = useFetchDetail()
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        setTimeout(()=> {
-            setLoading(false)
-        }, 2000)
-    }, [])
+    const [productDetail, loading] = useFetchDetail()
 
     return (
         <>
-            <div className='d-flex justify-content-around mainContent flex-wrap'>
+            <div>
                 {
                     loading ?
                     <>
-                    <div className="d-flex align-items-center">
-                    <h4>Waiting for the product Details...</h4>
-                    <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-                    </div>   
-                    <img src={logo} style={{"width": "100%", "maxHeight": "300px", "maxWidth": "400px"}} alt="pageLogo"></img>              
+                    <div className='d-flex justify-content-around'>
+                        <div className="d-flex align-items-center">
+                        <h4>Waiting for the product Details...</h4>
+                        <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                        </div>   
+                        <img src={logo} style={{"width": "100%", "maxHeight": "300px", "maxWidth": "400px"}} alt="pageLogo"></img>   
+                    </div>           
                     </>
 
                     :
 
                     productDetail.map((detail) => {
-                    return <Details 
-                    id={detail.id} 
-                    name={detail.name} 
-                    main_picture_url={detail.main_picture_url} 
-                    size_range={detail.size_range.map((data, index) => {
-                        return <li key={index}>{data.size_range}</li>
+                        return <Details 
+                        id={detail.id} 
+                        name={detail.name} 
+                        main_picture_url={detail.main_picture_url} 
+                        story_html={detail.story_html}
+                        size_range={detail.size_range}
+                        retail_price_cents={detail.retail_price_cents}
+                        quantity={detail.quantity} />
                     })}
-                    story_html={detail.story_html}
-                    retail_price_cents={detail.retail_price_cents}
-                    quantity={detail.quantity} />
-                })}
             </div>
         </>
     )

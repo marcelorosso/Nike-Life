@@ -1,7 +1,6 @@
 import logo from '../nike_shoe.jpg';
 import '../styles.css';
 import React from "react"
-import ProductsList from './products_list';
 
 const ItemListContainer = () => {
     let greeting = "Hello React Word - Nike page is near happens";
