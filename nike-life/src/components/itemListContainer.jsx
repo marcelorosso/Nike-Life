@@ -3,8 +3,7 @@ import Card from './card';
 import logo from '../nike_logo.png';
 import { useParams } from 'react-router-dom';
 
-export function useFetch() {
-
+export const useFetch = () => {
     const {catId} = useParams()
     console.log(catId)
 
@@ -36,8 +35,6 @@ export function useFetch() {
 
   return [products, loading]
 }
-
-
 
 
 function ProductsList() {

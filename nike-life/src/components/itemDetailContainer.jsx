@@ -66,15 +66,21 @@ export default function ProductsDetail() {
 
                     :
 
-                    productDetail.map((detail) => {
+                    productDetail.map((detail, index) => {
                         return <Details 
+                        key={index}
                         id={detail.id} 
                         name={detail.name} 
                         main_picture_url={detail.main_picture_url} 
                         story_html={detail.story_html}
                         size_range={detail.size_range}
                         retail_price_cents={detail.retail_price_cents}
-                        quantity={detail.quantity} />
+                        quantity={detail.quantity}
+                        color={detail.color} 
+                        designer={detail.designer}
+                        details={detail.details}
+
+                        productDetail ={detail}/>
                     })}
             </div>
         </>

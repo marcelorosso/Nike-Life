@@ -2,7 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../nike_logo.png';
 import '../styles.css';
 import Announcement from './Announcement';
-import CartWidget from './cart_widge';
+import Cart from './cart';
+// import CartWidget from './cart_widge';
 
 export default function NavBar() {
     return (
@@ -35,7 +36,8 @@ export default function NavBar() {
                     </NavLink>
                 </div>
                 <div className='cartIcon'>
-                    <CartWidget/>
+                    {/* <CartWidget/> */}
+                    <Cart />
                 </div>
             </div>
         </header>
