@@ -23,10 +23,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.App .App-main .carousel-item {
+  padding-top: 30px;
 }
 .App .App-main .App-logo {
   height: 40vmin;
@@ -36,7 +38,7 @@
   .App .App-main .App-logo {
     -webkit-animation: App-logo-spin infinite 20s linear;
             animation: App-logo-spin infinite 20s linear;
-    max-height: 250px;
+    max-height: 350px;
   }
 }
 .App .App-main .App-link {
@@ -105,6 +107,10 @@
   display: flex;
   align-items: center;
 }
+.navBar .searchForm {
+  display: flex;
+  align-items: center;
+}
 
 .card {
   position: initial !important;
@@ -113,6 +119,7 @@
   font-family: "Anek Malayalam", sans-serif;
   border: 2px solid rgba(0, 0, 0, 0.125) !important;
   max-width: 333px !important;
+  margin-bottom: 7px;
 }
 .card .cardImg img {
   width: 100%;
@@ -278,4 +285,17 @@
 }
 .cartItem .dataContainer .right p {
   font-weight: bold;
+}
+
+.text-color {
+  --tw-text-opacity: 1;
+  color: rgb(48 48 48/var(--tw-text-opacity));
+  letter-spacing: 0.22em;
+  font-family: "Anek Malayalam", sans-serif;
+}
+
+.text-family {
+  --tw-text-opacity: 1;
+  color: rgb(48 48 48/var(--tw-text-opacity));
+  font-family: "Anek Malayalam", sans-serif;
 }/*# sourceMappingURL=styles.css.map */

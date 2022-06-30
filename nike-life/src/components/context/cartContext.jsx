@@ -54,12 +54,40 @@ export const CartProvider = ({children}) => {
         }
     }
 
+    // Obtener número total de items
+    const cartLenght = () => {
+        let quantity = 0
+        cartItems.forEach((item) => {
+            quantity = quantity + item.amount
+        })
+        return quantity
+    }
+
+    // Obtener el subtotal
+    const getSubtotal = (price, quantity) => {
+        let subtotal = 0
+        subtotal = subtotal + (price * quantity)
+        return Number(subtotal)
+    }
+
+    // Obtener el total
+    const getTotal = () => {
+        let total = 0
+        cartItems.forEach((item) => {
+            total = total + (item.amount * item.retail_price_cents)
+        })
+        return Number(total)
+    }
+
     return (
         <CartContext.Provider value={{
             cartItems,
             addItemsToCart,
             deleteItemsFromCart,
-            emptyCart
+            emptyCart,
+            cartLenght,
+            getSubtotal,
+            getTotal
         }} 
         >
             {children}

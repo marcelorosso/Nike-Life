@@ -1,6 +1,8 @@
 import logo from '../nike_shoe.jpg';
 import '../styles.css';
 import React from "react"
+import Slider from './slider';
+
 
 const ItemListContainer = () => {
     let greeting = "Hello React Word - Nike page is near happens";
@@ -8,11 +10,10 @@ const ItemListContainer = () => {
     <>
       <div className="App">
           <main className="App-main">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2> {greeting} </h2>
-            <h1> Nike - Life </h1>
+            <Slider />
           </main> 
       </div>
+      
     </>
   )
 }

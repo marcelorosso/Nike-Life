@@ -2,33 +2,37 @@ import React, {useState, useEffect} from 'react'
 import Card from './card';
 import logo from '../nike_logo.png';
 import { useParams } from 'react-router-dom';
+import { collection, doc, getDoc, getDocs, getFirestore, orderBy, query, where } from 'firebase/firestore';
 
 export const useFetch = () => {
+
     const {catId} = useParams()
     console.log(catId)
 
     const [products, setDetail] = useState([])
     const [loading, setLoading] = useState(false)
-    
-    useEffect(() => {
+
+    useEffect(()=> {
         if (catId) {
-            fetch("/products/sneakers.json")
-            .then(response => response.json())
-            .then(data => setDetail(data.filter(prod => prod.brand_name === catId )))
-            setLoading(true)
-            setTimeout(()=> {
-                setLoading(false)
-            }, 2000)
-        
+        const db = getFirestore()
+        const queryCollection = collection(db, "products")
+        const queryCollectionFilter = query(queryCollection, where("brand_name","==", catId))
+        getDocs(queryCollectionFilter)
+        .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
+        setLoading(true)
+        setTimeout(()=> {
+            setLoading(false)
+        }, 2000)
         } else {
-            fetch("/products/sneakers.json")
-            .then(response => response.json())
-            .then(data => setDetail(data))
+            const db = getFirestore()
+            const queryCollection = collection(db, "products")
+            getDocs(queryCollection)
+            .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
             setLoading(true)
             setTimeout(()=> {
                 setLoading(false)
-            }, 2000)
-        }  
+            }, 2000) 
+        }
     }, [catId])
 
   console.log(products)
@@ -40,7 +44,7 @@ export const useFetch = () => {
 function ProductsList() {
 
     const [products, loading] = useFetch()
-
+    console.log(products)
     return (
         <>
             <div className='d-flex justify-content-around mainContent flex-wrap'>
@@ -56,8 +60,9 @@ function ProductsList() {
 
                     :
 
-                    products.map((shoes) => {
+                    products.map((shoes, index) => {
                     return <Card 
+                    key={index}
                     id={shoes.id} 
                     name={shoes.name} 
                     grid_picture_url={shoes.grid_picture_url} 

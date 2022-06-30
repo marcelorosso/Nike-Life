@@ -1,8 +1,8 @@
+import { doc, getDoc, getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import logo from '../nike_logo.png';
 import Details from './itemDetail';
-// import Card from "./card"
 
 
 function useFetchDetail() {
@@ -12,29 +12,27 @@ function useFetchDetail() {
 
     const [productDetail, setDetail] = useState([])
     const [loading, setLoading] = useState(false)
-    
-    useEffect(() => {
-        if (id) {
-            fetch("/products/sneakers.json")
-            .then(response => response.json())
-            .then(data => {
-                setDetail(data.filter((prod)=> prod.id === parseFloat(id)))
-                setLoading(true)
-            })
-            setTimeout(()=> {
-                setLoading(false)
-            }, 2000)
 
+    useEffect(()=> {
+        if (id) {
+        const db = getFirestore()
+        const queryCollection = collection(db, "products")
+        const queryCollectionFilter = query(queryCollection, where("id","==", parseFloat(id)))
+        getDocs(queryCollectionFilter)
+        .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
+        setLoading(true)
+        setTimeout(()=> {
+            setLoading(false)
+        }, 2000)
         } else {
-            fetch("/products/sneakers.json")
-            .then(response => response.json())
-            .then(data => {
-                setDetail(data)
-                setLoading(true)
-            })
+            const db = getFirestore()
+            const queryCollection = collection(db, "products")
+            getDocs(queryCollection)
+            .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
+            setLoading(true)
             setTimeout(()=> {
                 setLoading(false)
-            }, 2000)
+            }, 2000) 
         }
     }, [id])
     
@@ -48,7 +46,8 @@ function useFetchDetail() {
 export default function ProductsDetail() {
 
     const [productDetail, loading] = useFetchDetail()
-
+    console.log(productDetail)
+    
     return (
         <>
             <div>
@@ -81,7 +80,9 @@ export default function ProductsDetail() {
                         details={detail.details}
 
                         productDetail ={detail}/>
-                    })}
+                    })
+                }
+            
             </div>
         </>
     )

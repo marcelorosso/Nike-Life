@@ -21,6 +21,9 @@ const ItemCart = ({item}) => {
           {item.amount}
           <p>Total: ${item.amount * item.retail_price_cents}</p>
         </div>
+        <div>
+
+        </div>
       </div>
     </div>
   )

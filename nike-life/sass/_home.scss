@@ -29,10 +29,13 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         font-size: calc(10px + 2vmin);
         color: white;
+
+        .carousel-item {
+            padding-top: 30px;
+        }
 
         .App-logo {
             height: 40vmin;
@@ -42,7 +45,7 @@
         @media (prefers-reduced-motion: no-preference) {
             .App-logo {
               animation: App-logo-spin infinite 20s linear;
-              max-height: 250px;
+              max-height: 350px;
             }
         }
 
@@ -117,6 +120,11 @@
         display: flex;
         align-items: center;
     }
+
+    .searchForm {
+        display: flex;
+        align-items: center;
+    }
 }
   
 //-- Product List --//
@@ -129,6 +137,7 @@
     font-family: 'Anek Malayalam', sans-serif;
     border: 2px solid rgba(0,0,0,.125) !important;
     max-width: 333px !important;
+    margin-bottom: 7px;
 
     .cardImg {
         img {
@@ -327,4 +336,19 @@
         }
     }
   }
+}
+
+// Checkout Page
+
+.text-color {
+    --tw-text-opacity: 1;
+    color: rgb(48 48 48/var(--tw-text-opacity));
+    letter-spacing: .22em;
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+.text-family {
+    --tw-text-opacity: 1;
+    color: rgb(48 48 48/var(--tw-text-opacity));
+    font-family: 'Anek Malayalam', sans-serif;
 }

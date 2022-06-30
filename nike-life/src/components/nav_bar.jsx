@@ -21,6 +21,17 @@ export default function NavBar() {
                         <Link to="/social media"><li>Social Media</li></Link>
                     </ul>
                 </div>
+                {/* <div className='searchForm'>
+                    <form className="d-flex" role="search">
+                        <input 
+                        className="form-control me-2" 
+                        type="search" 
+                        placeholder="Search" 
+                        aria-label="Search" 
+                        />
+                        <button className="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div> */}
                 <div className="btn-group">
                     <NavLink to="/category/Air Jordan">
                         <button type="button" className="btn btn-dark">Air Jordan</button>
@@ -41,7 +52,6 @@ export default function NavBar() {
                 </div>
             </div>
         </header>
-
         </>
     );
   }
