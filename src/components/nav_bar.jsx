@@ -16,9 +16,9 @@ export default function NavBar() {
                 </div>
                 <div className="menu">
                     <ul>
-                        <Link to="/"><li>Home</li></Link>
-                        <Link to="/store"><li>Store</li></Link>
-                        <Link to="/social media"><li>Social Media</li></Link>
+                        <Link to="/" style={{textDecoration: 'none'}}><li>Home</li></Link>
+                        <Link to="/store" style={{textDecoration: 'none'}}><li>Store</li></Link>
+                        <Link to="/social media" style={{textDecoration: 'none'}}><li>Social Media</li></Link>
                     </ul>
                 </div>
                 {/* <div className='searchForm'>

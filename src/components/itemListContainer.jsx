@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react'
 import Card from './card';
 import logo from '../nike_logo.png';
 import { useParams } from 'react-router-dom';
-import { collection, doc, getDoc, getDocs, getFirestore, orderBy, query, where } from 'firebase/firestore';
+import { collection, getDocs, getFirestore, query, where, limit } from 'firebase/firestore';
 
 export const useFetch = () => {
 
     const {catId} = useParams()
-    console.log(catId)
 
     const [products, setDetail] = useState([])
     const [loading, setLoading] = useState(false)
@@ -16,7 +15,7 @@ export const useFetch = () => {
         if (catId) {
         const db = getFirestore()
         const queryCollection = collection(db, "products")
-        const queryCollectionFilter = query(queryCollection, where("brand_name","==", catId))
+        const queryCollectionFilter = query(queryCollection, where("brand_name","==", catId), limit(5))
         getDocs(queryCollectionFilter)
         .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
         setLoading(true)
@@ -35,8 +34,6 @@ export const useFetch = () => {
         }
     }, [catId])
 
-  console.log(products)
-
   return [products, loading]
 }
 
@@ -44,7 +41,7 @@ export const useFetch = () => {
 function ProductsList() {
 
     const [products, loading] = useFetch()
-    console.log(products)
+
     return (
         <>
             <div className='d-flex justify-content-around mainContent flex-wrap'>
@@ -68,7 +65,8 @@ function ProductsList() {
                     grid_picture_url={shoes.grid_picture_url} 
                     category={shoes.category}
                     retail_price_cents={shoes.retail_price_cents}/>
-                })}
+                    })
+                }    
             </div>
         </>
     )

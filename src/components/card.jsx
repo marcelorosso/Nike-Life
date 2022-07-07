@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../styles.css";
+import { formatPrice } from './formatPrice';
 
 const Card = (props) => {
   return (
@@ -11,7 +12,7 @@ const Card = (props) => {
         <div className="cardHeader">
             <h2>{props.name}</h2>
             <p>{props.category}</p>
-            <p className="price"><span>$</span>{props.retail_price_cents}</p>
+            <p className="price">{formatPrice(props.retail_price_cents)}</p>
             <Link to={`/details/${props.id}`}><button className="btn btn-dark">Details</button></Link>
         </div><br/>
     </div>

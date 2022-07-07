@@ -1,12 +1,11 @@
 import './styles.css';
-import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from './components/nav_bar';
 import ItemListContainer from './components/home';
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import ProductsList from './components/itemListContainer';
 import ProductsDetail from './components/itemDetailContainer';
-import { CartProvider } from './components/context/cartContext';
-import CheckoutPage from './checkoutPage';
+import { CartProvider } from './context/cartContext';
+import CheckoutPage from './components/checkoutPage';
 
 function App() {
   return (

@@ -161,13 +161,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin: 10px;
 
         .cardHeader {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            
+            align-items: start;
 
             .form-select {
                 width: 20%;

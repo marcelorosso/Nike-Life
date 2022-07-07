@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { CartContext } from './context/cartContext'
+import { CartContext } from '../context/cartContext'
 import IconButton from "@mui/material/IconButton"
 import StyledBadge from "@mui/material/Badge"
 import ItemCart from './itemCart'
-import { addDoc, collection, doc, getFirestore, updateDoc } from 'firebase/firestore'
 import { Link } from 'react-router-dom'
+import { formatPrice } from './formatPrice'
 
 const Cart = () => {
 
     const [cartOpen, setCartOpen] = useState(false)
     const [productsLength, setProductslength] = useState(0)
 
-    const {cartItems, emptyCart, addItemsToCart} = useContext(CartContext)
+    const {cartItems, emptyCart} = useContext(CartContext)
 
     useEffect(()=> {
         setProductslength(
@@ -59,11 +59,10 @@ const Cart = () => {
                         </div>
                     )}
 
-                    <h2 className="total">Total : ${total}</h2>
+                    <h2 className="total">Total : {formatPrice(total)}</h2>
                     <div style={{"textAlign":"center", "paddingBottom":"10px"}}>
                         <Link to="/checkout">
                             <button  className="btn btn-danger">Go Checkout</button>
-                            {/* <button  className="btn btn-danger" onClick={() => generarOrden(cartItems)}>Go Checkout</button> */}
                         </Link>
                     </div>
                 </div>

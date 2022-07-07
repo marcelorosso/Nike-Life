@@ -1,4 +1,4 @@
-import { doc, getDoc, getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import logo from '../nike_logo.png';
@@ -35,9 +35,6 @@ function useFetchDetail() {
             }, 2000) 
         }
     }, [id])
-    
-
-  console.log(productDetail)
 
   return [productDetail, loading]
 }
@@ -46,7 +43,6 @@ function useFetchDetail() {
 export default function ProductsDetail() {
 
     const [productDetail, loading] = useFetchDetail()
-    console.log(productDetail)
     
     return (
         <>

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { CartContext } from './components/context/cartContext'
-import {addOrder} from "./firebase/firebaseClient"
+import { CartContext } from '../context/cartContext'
+import {addOrder} from "../firebase/firebaseClient"
 import { Link } from "react-router-dom"
+import { formatPrice } from './formatPrice'
 
 const CheckoutPage = () => {
 
@@ -49,13 +50,9 @@ const CheckoutPage = () => {
         addOrder(order).then(data => {
             setIdCompra(data)
         })
-
-        console.log(order)
     }
 
-    console.log(idCompra)
-
-    // Render del checkout
+    // Checkout Render
     return (
         <>
             {/* Contenedor checkout */}
@@ -82,7 +79,7 @@ const CheckoutPage = () => {
                                 </div>
                                 <div className={"d-flex justify-content-between text-secondary fw-semibold"}>
                                     <p>Total:</p>
-                                    <p>${getTotal()}</p>
+                                    <p>{formatPrice(getTotal())}</p>
                                 </div>
                             </div><br />
                             <Link to='/store' className=" d-flex flex-row align-items-center text-lowercase" style={{ textDecoration: 'none', color: 'gray' }}>
@@ -91,10 +88,10 @@ const CheckoutPage = () => {
                             </Link>
                         </div>
 
-                        {/* Detalle de facturación */}
+                        {/* Purchase Details*/}
                         <div className="d-flex flex-column justify-content-start align-items-start w-100">
 
-                            {/* Formulario */}
+                            {/* Form */}
                             <form>
                                 <h2 className={"fs-4"}>Detalles de facturación</h2>
                                 <input
@@ -149,10 +146,10 @@ const CheckoutPage = () => {
                                 />
                             </form>
 
-                            {/* Si se completan todos los inputs correctamente, se habilita el botón para proceder con el pago */}
+                            {/* If inputs are fulled, the payment button will be enabled*/}
                             {buyer.name && buyer.surname && buyer.telephone && (buyer.email === buyer.emailConfirm) && telephoneRegex.test(buyer.telephone) && emailRegex.test(buyer.email, buyer.emailConfirm)
                                 ? (
-                                    // Botón habilitado
+                                    // enabled
                                     <input 
                                         onClick={() => { orderHandler(); setShowModal(true) }} 
                                         className={"w-100"}
@@ -161,7 +158,7 @@ const CheckoutPage = () => {
                                         value="Proceder al pago" 
                                     />
                                 ) : (
-                                    // Botón deshabilitado
+                                    // disabled
                                     <input 
                                         className={"w-100"}
                                         style={{marginTop: '24px', paddingTop:'12px', paddingBottom:'12px'}}
@@ -176,7 +173,7 @@ const CheckoutPage = () => {
                 </div>
             </div><br />
 
-            {/* Contenedor modal final */}
+            {/* Final modal container */}
             <div className={`${showModal ? "d-flex" : "hidden"}`}>
                 <div className="container justify-content-center align-items-center">
                     <div className="d-flex flex-column text-family">
@@ -184,7 +181,7 @@ const CheckoutPage = () => {
                         <p className={"mt-6 text-center md:w-9/12 lg:w-7/12 "}>Te enviamos un mail a {(buyer.email).toLowerCase()} con tu orden de compra <strong>ID: {idCompra}</strong>. Esperamos que hayas tenido una agradable experiencia en NIKE-LIFE. ¡Hasta la próxima!</p>
                         <Link to="/" className="mt-6 flex justify-center">
                             <button onClick={emptyCart} className={"w-100 text-secondary text-opacity-50 cursor-pointer border border-1 border-opacity-25"} style={{marginTop: '10px', marginBottom: '10px', paddingTop:'12px', paddingBottom:'12px'}}>
-                                Volver al inicio
+                                Comeback Home
                             </button>
                         </Link>
                     </div>

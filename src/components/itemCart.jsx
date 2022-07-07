@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import { CartContext } from './context/cartContext'
+import { CartContext } from '../context/cartContext'
+import { formatPrice } from './formatPrice'
 
 const ItemCart = ({item}) => {
-  const {addItemsToCart, deleteItemsFromCart} = useContext(CartContext)
+  const {addingIntoCart, deleteItemsFromCart} = useContext(CartContext)
 
   const {id} = item
 
@@ -13,13 +14,13 @@ const ItemCart = ({item}) => {
         <div className='left'>
           <p>{item.name}</p>
           <div className='buttons'>
-            <button onClick={() => addItemsToCart(item)} disabled={item.amount ===  item.quantity} >ADD</button>
+            <button onClick={() => addingIntoCart(item)} disabled={item.amount ===  item.quantity} >ADD</button>
             <button onClick={() => deleteItemsFromCart(item)}>DELETE</button>
           </div>
         </div>
         <div className='right'>
           {item.amount}
-          <p>Total: ${item.amount * item.retail_price_cents}</p>
+          <p>Total: {formatPrice(item.amount * item.retail_price_cents)}</p>
         </div>
         <div>
 
