@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nike-life/static/css/main.ec24f08f.css",
-    "main.js": "/nike-life/static/js/main.05e2f713.js",
-    "static/media/nike_shoe.jpg": "/nike-life/static/media/nike_shoe.12e5cdc65be4f7a9b52c.jpg",
-    "index.html": "/nike-life/index.html",
-    "main.ec24f08f.css.map": "/nike-life/static/css/main.ec24f08f.css.map",
-    "main.05e2f713.js.map": "/nike-life/static/js/main.05e2f713.js.map"
+    "main.css": "/Nike-Life/static/css/main.ec24f08f.css",
+    "main.js": "/Nike-Life/static/js/main.f3dfde4b.js",
+    "static/media/nike_shoe.jpg": "/Nike-Life/static/media/nike_shoe.12e5cdc65be4f7a9b52c.jpg",
+    "index.html": "/Nike-Life/index.html",
+    "main.ec24f08f.css.map": "/Nike-Life/static/css/main.ec24f08f.css.map",
+    "main.f3dfde4b.js.map": "/Nike-Life/static/js/main.f3dfde4b.js.map"
   },
   "entrypoints": [
     "static/css/main.ec24f08f.css",
-    "static/js/main.05e2f713.js"
+    "static/js/main.f3dfde4b.js"
   ]
 }
