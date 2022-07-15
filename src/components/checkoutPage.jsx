@@ -61,7 +61,7 @@ const CheckoutPage = () => {
             imageAlt: 'Custom image',
             titleText: `Thanks for your purchase ${(buyer.name).toUpperCase()}`,
             text: `We sent you an email to ${(buyer.email).toLowerCase()} with your purchase order. 
-            If you want to know the purchase number just press the "See Purchase ID" button.`,
+            If you want to know the purchase number just pressing the "See Purchase ID" button.`,
             color: "green",
             heightAuto: true,
         })

@@ -2,7 +2,9 @@
 
 This project was created using react-app. It´s a sneakers store which everyone can buy shoes from Nike branch (limited edition, designed by known people) totally on-line (without physical location).
 
-* Page Link: **https://marcelorosso.github.io/Nike-Life/**
+* Page GitHub Link: **https://marcelorosso.github.io/Nike-Life/**
+
+- Page Netlify Link: **https://verdant-bunny-3d318d.netlify.app/**
 
 ## Installation
 
@@ -42,21 +44,21 @@ The GitHub Pages site is currently being built from the **gh-pages** branch. (Bu
 
 ## Deploy Preview Videos
 
-* Overview of the page:<br>
-![UniConverter_20220502210751-min](https://user-images.githubusercontent.com/32752596/166394357-2d30c685-32ee-49e9-833f-3cdd35f38ab5.gif)<br>
+* Page Overview:<br>
+![UniConverter_20220502210751-min](https://drive.google.com/file/d/1EaUQeRB0hjWGM_bw0IDGwyvmdh4lnxu_/view?usp=sharing)<br>
 
 
 * Selecting products in Store:<br>
-![UniConverter_20220502211708-min](https://user-images.githubusercontent.com/32752596/166394515-3b22f939-cddf-4af9-8bd5-5618bd974071.gif)<br>
+![UniConverter_20220502211708-min](https://drive.google.com/file/d/17gF_8pvjYEeErrRk5Mkz0rKhz7MPhpvk/view?usp=sharing)<br>
 
 
-* Charging Products to the cart and going at Checkout Page:<br>
-![UniConverter_20220502213450-min](https://user-images.githubusercontent.com/32752596/166394628-9244232d-d051-4791-b634-584251aebe42.gif)
+* Charging Products into the cart and going on (Checkout Page):<br>
+![UniConverter_20220502213450-min](https://drive.google.com/file/d/1_ryQYZKxxrbjSLaRPMIypMR1KFE3S3f9/view?usp=sharing)
 
-* Purchase finalized and showing the number of ID (Purchase Order - Firebase -):<br>
-![UniConverter_20220502213450-min](https://user-images.githubusercontent.com/32752596/166394628-9244232d-d051-4791-b634-584251aebe42.gif)
+* Purchase finalized and showing the number of ID (Purchase Order *Firebase*):<br>
+![UniConverter_20220502213450-min](https://drive.google.com/file/d/1dIJgZi9Iws83zBTpZuAIMo1tisdMjgOt/view?usp=sharing)
 
-## Developer/Course Data
+## Developer/Course Information
 
 * Made by **Marcelo Rosso** 
 
