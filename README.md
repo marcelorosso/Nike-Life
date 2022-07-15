@@ -1,12 +1,15 @@
-# Getting Started with Create React App
+# Nike-Life React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using react-app. It´s a sneakers store which everyone can buy shoes from Nike branch (limited edition, designed by known people) totally on-line (without physical location).
 
-## Available Scripts
+* Page Link: **https://marcelorosso.github.io/Nike-Life/**
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+* $ git clone [https://github.com/marcelorosso/Nike-Life.git](https://github.com/marcelorosso/Nike-Life.git).
+* $ cd ../ruta/carpeta
+* $ npm install
+* $ npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +17,54 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Dependences Added
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Material UI](https://mui.com/): Version 5.8.4 
+  `npm install @mui/material @emotion/react @emotion/styled`
 
-### `npm run build`
+* [Firebase](https://firebase.google.com/): Version 9.8.3
+  `npm install firebase`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [SweetAlert2](https://sweetalert2.github.io/): Version 11.4.20
+  `npm i sweetalert2`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* To make deploy through gitHub pages [gh-pages deploy tutorial](https://www.youtube.com/watch?v=82XNPIiHvOQ&list=LL&index=5&t=7s) Version 4.0.0
+  `npm i gh-pages`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The GitHub Pages site is currently being built from the **gh-pages** branch. (Built by using npm run deploy)
 
-### `npm run eject`
+## Additional Library and Framework
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - "Index Script"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [Google Fonts](https://fonts.google.com/) - "Index Script"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deploy Preview Videos
 
-## Learn More
+* Overview of the page:<br>
+![UniConverter_20220502210751-min](https://user-images.githubusercontent.com/32752596/166394357-2d30c685-32ee-49e9-833f-3cdd35f38ab5.gif)<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Selecting products in Store:<br>
+![UniConverter_20220502211708-min](https://user-images.githubusercontent.com/32752596/166394515-3b22f939-cddf-4af9-8bd5-5618bd974071.gif)<br>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Charging Products to the cart and going at Checkout Page:<br>
+![UniConverter_20220502213450-min](https://user-images.githubusercontent.com/32752596/166394628-9244232d-d051-4791-b634-584251aebe42.gif)
 
-### Analyzing the Bundle Size
+* Purchase finalized and showing the number of ID (Purchase Order - Firebase -):<br>
+![UniConverter_20220502213450-min](https://user-images.githubusercontent.com/32752596/166394628-9244232d-d051-4791-b634-584251aebe42.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Developer/Course Data
 
-### Making a Progressive Web App
+* Made by **Marcelo Rosso** 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Course Commission number was 31200
 
-### Advanced Configuration
+* **Tutor**: Javier Gimenez
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* **Teacher**: Federico Osandon
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

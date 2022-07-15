@@ -60,11 +60,10 @@ const CheckoutPage = () => {
             imageHeight: 250,
             imageAlt: 'Custom image',
             titleText: `Thanks for your purchase ${(buyer.name).toUpperCase()}`,
-            text: `We sent you an email to ${(buyer.email).toLowerCase()} with your purchase order. If you want to know the purchase number just press the "See Purchase ID" button.`,
-            timer: 8000,
+            text: `We sent you an email to ${(buyer.email).toLowerCase()} with your purchase order. 
+            If you want to know the purchase number just press the "See Purchase ID" button.`,
             color: "green",
             heightAuto: true,
-            timerProgressBar: true
         })
     }
 
@@ -184,7 +183,7 @@ const CheckoutPage = () => {
                                         className={"w-100"}
                                         style={{marginTop: '24px', paddingTop:'12px', paddingBottom:'12px'}}
                                         type="submit" 
-                                        value="Proceder al pago" 
+                                        value="Make the payment" 
                                     />
                                     {/* Id button called "See Purchase ID" (to see the purchase order id after it is done) */}
                                     <input 
