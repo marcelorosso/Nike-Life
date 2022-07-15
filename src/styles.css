@@ -21,47 +21,17 @@
 .App .App-main {
   background-color: #0062be;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-.App .App-main .carousel-item {
-  padding-top: 30px;
-}
 .App .App-main .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App .App-main .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-    max-height: 350px;
-  }
+  max-height: 678px;
+  width: 100%;
+  max-width: 1382px;
 }
 .App .App-main .App-link {
   color: #61dafb;
 }
 
-@-webkit-keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .navBar {
   display: flex;
   justify-content: space-around;
@@ -118,7 +88,7 @@
   max-width: 30% !important;
   font-family: "Anek Malayalam", sans-serif;
   border: 2px solid rgba(0, 0, 0, 0.125) !important;
-  max-width: 333px !important;
+  max-width: 270px !important;
   margin-bottom: 7px;
 }
 .card .cardImg img {
@@ -163,11 +133,11 @@
   display: flex;
   justify-content: flex-end;
   font-family: Roboto;
+  z-index: 2;
 }
 .cartContainer .buttonCartContainer {
   position: absolute;
   margin-right: 20px;
-  z-index: 2;
 }
 .cartContainer .buttonCartContainer img {
   height: 25px;
@@ -299,4 +269,140 @@
   --tw-text-opacity: 1;
   color: rgb(48 48 48/var(--tw-text-opacity));
   font-family: "Anek Malayalam", sans-serif;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-top: 0.1rem solid lightgrey;
+}
+footer .copyright {
+  padding-top: 1rem;
+  text-align: center;
+}
+footer .copyright a {
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  color: lightgray;
+  font-size: 20px;
+  font-family: monospace;
+}
+footer .copyright p {
+  font-size: small;
+  color: grey;
+  margin-bottom: 0;
+}
+footer .copyright i {
+  padding-left: 5px;
+}
+footer .copyright span {
+  font-size: small;
+  color: grey;
+}
+footer .copyright span .heart {
+  display: inline-flex;
+  -webkit-animation-name: beat;
+          animation-name: beat;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes beat {
+  0% {
+    transform: scale(0.9);
+  }
+  5% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+@keyframes beat {
+  0% {
+    transform: scale(0.9);
+  }
+  5% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.modal-body {
+  width: 80%;
+  margin-left: 10%;
+  font-family: "Roboto", sans-serif;
+}
+.modal-body .buttons_modal {
+  display: flex;
+  flex-direction: column;
+}
+.modal-body .buttons_modal .btn_facebook,
+.modal-body .buttons_modal .btn_google,
+.modal-body .buttons_modal .btn_email {
+  margin-bottom: 1rem;
+  padding: 1em;
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal-body .buttons_modal .btn_facebook a,
+.modal-body .buttons_modal .btn_google a,
+.modal-body .buttons_modal .btn_email a {
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+.modal-body .buttons_modal .btn_facebook {
+  background-color: #006ab1;
+}
+.modal-body .buttons_modal .btn_facebook a {
+  color: white;
+}
+.modal-body .buttons_modal .btn_google {
+  color: #000;
+  background-color: #E7E7E7;
+}
+.modal-body .buttons_modal .btn_email {
+  border: 1px solid #06A106;
+  color: #06A106;
+  background-color: #ffffff;
+}
+.modal-body a, .modal-body p {
+  font-family: "Roboto", sans-serif;
+}
+
+.family {
+  font-family: "Roboto", sans-serif;
 }/*# sourceMappingURL=styles.css.map */

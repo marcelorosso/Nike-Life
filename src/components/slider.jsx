@@ -1,25 +1,34 @@
-import logo from "../nike_shoe.jpg"
+import home2 from "../home_picture2.jpg"
+import home3 from "../home_picture3.jpg"
+import home4 from "../home_picture4.jpg"
 
 const Slider = () => {
-  let greeting = "Hello React Word - Nike page is near happens";
+  let greeting = "Welcome to Nike - Life Shop";
+  let slogan = "You will see the shoes created by the best designers"
   return (
     <>
       <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2> {greeting} </h2>
-            <h1> Nike - Life </h1>
+              <img src={home4} className="App-logo" alt="logo" />
+              <div className="carousel-caption">
+              <h2> {greeting} </h2>
+              <p> {slogan} </p>
+            </div>
           </div>
           <div className="carousel-item">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2> {greeting} </h2>
-            <h1> Nike - Life </h1>
+            <img src={home2} className="App-logo" alt="logo" />
+            <div className="carousel-caption">
+              <h2> {greeting} </h2>
+              <p> {slogan} </p>
+            </div>
           </div>
           <div className="carousel-item">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2> {greeting} </h2>
-            <h1> Nike - Life </h1>
+            <img src={home3} className="App-logo" alt="logo" />
+            <div className="carousel-caption">
+              <h2> {greeting} </h2>
+              <p> {slogan} </p>
+            </div>
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

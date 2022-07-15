@@ -3,6 +3,9 @@ import { CartContext } from '../context/cartContext'
 import {addOrder} from "../firebase/firebaseClient"
 import { Link } from "react-router-dom"
 import { formatPrice } from './formatPrice'
+import Swal from "sweetalert2"
+import logo_page from "../logo_page.jpeg"
+import Footer from './footer'
 
 const CheckoutPage = () => {
 
@@ -11,7 +14,6 @@ const CheckoutPage = () => {
 
 
     const [idCompra, setIdCompra] = useState("")
-    const [showModal, setShowModal] = useState(false)
     const [buyer, setBuyer] = useState({
         name: "",
         surname: "",
@@ -20,19 +22,20 @@ const CheckoutPage = () => {
         emailConfirm: "",
     })
 
-    // Expresiones regulares para los campos e-mail y teléfono
+    // Regular expressions for e-mail and telephone fields (inputs)
     const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
     const telephoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,6}$/im
 
-    // Obtener información acerca de la fecha en que se realizó la compra
+    // Get the date when the purchase was made
     const orderDate = new Date().toLocaleDateString()
 
-     // Obtener los datos del cliente
+     // Get the clients data
      const handleSubmitChange = (e) => {
         setBuyer({ ...buyer, [e.target.name]: e.target.value })
     }
 
-    // Generación de la orden, con información del cliente, los items, el precio y la fecha en que se realizó la compra
+    // Get the purchase order (client data, products, price and purchase date) and shows a pop-up with the client data
+    // when the "buy button is pressed"
     function orderHandler() {
         const order = {
             buyer,
@@ -50,32 +53,53 @@ const CheckoutPage = () => {
         addOrder(order).then(data => {
             setIdCompra(data)
         })
+
+        Swal.fire({
+            imageUrl: `${logo_page}`,
+            imageWidth: 350,
+            imageHeight: 250,
+            imageAlt: 'Custom image',
+            titleText: `Thanks for your purchase ${(buyer.name).toUpperCase()}`,
+            text: `We sent you an email to ${(buyer.email).toLowerCase()} with your purchase order.`,
+            timer: 8000,
+            color: "green",
+            heightAuto: true,
+            timerProgressBar: true
+        })
+    }
+
+    // It renders a pop-up with client's data when the "see Id button is pressed"
+    const showId = () => {
+        Swal.fire({
+            text: `Purchase ID: ${idCompra}`,
+            color: "black" 
+        })
     }
 
     // Checkout Render
     return (
         <>
-            {/* Contenedor checkout */}
+            {/* Checkout container */}
             <div className=" d-flex justify-content-center align-items-center text-color" style={{marginLeft: '34.5px'}}>
                 <div className="d-flex w-97 flex-column justify-content-center align-items-center">
 
-                    {/* Título */}
+                    {/* Title*/}
                     <h1 className={ "align-self-start fs-3 text-secondary fw-semibold"}>Checkout</h1>
                     
-                    {/* Información de la compra */}
-                    <div className="d-flex w-100 justify-content-start align-items-start">
+                    {/* Purchase information */}
+                    <div className="d-flex w-98 justify-content-start align-items-start" style={{marginRight: '10px'}}>
                         
-                        {/* Resúmen */}
+                        {/* Resume */}
                         <div className="d-flex flex-column align-self-start w-100" style={{marginRight: '1.5rem'}}>
-                            <h2 className={"fs-4"}>Resúmen</h2>
+                            <h2 className={"fs-4"}>Resume</h2>
                             <div className="d-flex flex-column border border-opacity-25">
                                 <div className={"d-flex justify-content-between text-secondary text-opacity-50"}>
-                                    <p>Cantidad de items:</p>
+                                    <p>Number of items:</p>
                                     <p>{cartLenght()}</p>
                                 </div>
                                 <div className={"d-flex justify-content-between text-secondary text-opacity-50"}>
-                                    <p>Gastos de envío:</p>
-                                    <p>¡Envío gratis!</p>
+                                    <p>Shipping cost:</p>
+                                    <p>¡Free Shipping!</p>
                                 </div>
                                 <div className={"d-flex justify-content-between text-secondary fw-semibold"}>
                                     <p>Total:</p>
@@ -85,6 +109,10 @@ const CheckoutPage = () => {
                             <Link to='/store' className=" d-flex flex-row align-items-center text-lowercase" style={{ textDecoration: 'none', color: 'gray' }}>
                                 <img src="https://img.icons8.com/fluency-systems-filled/24/EBEBEB/double-left.png" alt="leftArrow" className="h-4 w-4 mr-1"/>
                                 Return Store
+                            </Link><br />
+                            <Link to='/' className=" d-flex flex-row align-items-center text-lowercase" style={{ textDecoration: 'none', color: 'gray' }}>
+                                <img src="https://img.icons8.com/fluency-systems-filled/24/EBEBEB/double-left.png" alt="leftArrow" className="h-4 w-4 mr-1"/>
+                                Comeback Home
                             </Link>
                         </div>
 
@@ -146,17 +174,27 @@ const CheckoutPage = () => {
                                 />
                             </form>
 
-                            {/* If inputs are fulled, the payment button will be enabled*/}
+                            {/* If inputs are fulled, the payment button will be enabled and appears the ID button*/}
                             {buyer.name && buyer.surname && buyer.telephone && (buyer.email === buyer.emailConfirm) && telephoneRegex.test(buyer.telephone) && emailRegex.test(buyer.email, buyer.emailConfirm)
                                 ? (
                                     // enabled
+                                    <>
                                     <input 
-                                        onClick={() => { orderHandler(); setShowModal(true) }} 
+                                        onClick={() => { orderHandler(); emptyCart()}} 
                                         className={"w-100"}
                                         style={{marginTop: '24px', paddingTop:'12px', paddingBottom:'12px'}}
                                         type="submit" 
                                         value="Proceder al pago" 
                                     />
+                                    {/* Id button called "See Purchase ID" (to see the purchase order id after it is done) */}
+                                    <input 
+                                        onClick={() => { showId()}} 
+                                        className={"w-100"}
+                                        style={{marginTop: '24px', paddingTop:'12px', paddingBottom:'12px'}}
+                                        type="submit" 
+                                        value="See Purchase ID" 
+                                    />
+                                    </>
                                 ) : (
                                     // disabled
                                     <input 
@@ -172,21 +210,7 @@ const CheckoutPage = () => {
                     </div>
                 </div>
             </div><br />
-
-            {/* Final modal container */}
-            <div className={`${showModal ? "d-flex" : "hidden"}`}>
-                <div className="container justify-content-center align-items-center">
-                    <div className="d-flex flex-column text-family">
-                        <h2 className={"fs-3 text-center text-secondary fw-semibold"}>¡Muchas gracias por tu compra {(buyer.name).toUpperCase()}!</h2>
-                        <p className={"mt-6 text-center md:w-9/12 lg:w-7/12 "}>Te enviamos un mail a {(buyer.email).toLowerCase()} con tu orden de compra <strong>ID: {idCompra}</strong>. Esperamos que hayas tenido una agradable experiencia en NIKE-LIFE. ¡Hasta la próxima!</p>
-                        <Link to="/" className="mt-6 flex justify-center">
-                            <button onClick={emptyCart} className={"w-100 text-secondary text-opacity-50 cursor-pointer border border-1 border-opacity-25"} style={{marginTop: '10px', marginBottom: '10px', paddingTop:'12px', paddingBottom:'12px'}}>
-                                Comeback Home
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+        <Footer />
 
         </>
     )

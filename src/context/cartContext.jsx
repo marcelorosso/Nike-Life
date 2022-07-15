@@ -1,5 +1,5 @@
-import {createContext} from "react"
-import {useState} from "react"
+import {createContext} from "react";
+import {useState} from "react";
 import { useEffect } from "react";
 
 export const CartContext = createContext([])
@@ -17,7 +17,6 @@ export const CartProvider = ({children}) => {
 
     useEffect(()=> {
         localStorage.setItem("cartproducts", JSON.stringify(cartItems))
-        console.log(cartItems)
     }, [cartItems])
 
     const emptyCart = () => {
@@ -71,7 +70,7 @@ export const CartProvider = ({children}) => {
         }
     }
 
-    // Obtener número total de items
+    // Get total number of items
     const cartLenght = () => {
         let quantity = 0
         cartItems.forEach((item) => {
@@ -80,14 +79,14 @@ export const CartProvider = ({children}) => {
         return quantity
     }
 
-    // Obtener el subtotal
+    // Get subtotal
     const getSubtotal = (price, quantity) => {
         let subtotal = 0
         subtotal = subtotal + (price * quantity)
         return Number(subtotal)
     }
 
-    // Obtener el total
+    // Get total
     const getTotal = () => {
         let total = 0
         cartItems.forEach((item) => {

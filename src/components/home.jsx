@@ -1,4 +1,5 @@
 import React from "react"
+import Footer from "./footer";
 import Slider from './slider';
 
 
@@ -10,10 +11,9 @@ const ItemListContainer = () => {
             <Slider />
           </main> 
       </div>
-      
+      <Footer />
     </>
   )
 }
 
 export default ItemListContainer;
-

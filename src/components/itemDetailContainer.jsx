@@ -8,7 +8,6 @@ import Details from './itemDetail';
 function useFetchDetail() {
 
     const {id} = useParams()
-    console.log(id)
 
     const [productDetail, setDetail] = useState([])
     const [loading, setLoading] = useState(false)

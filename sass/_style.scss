@@ -1,0 +1,457 @@
+//-- reset --//
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    margin: 0;
+}
+
+.row > * {
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+
+
+//-- Original App --//
+
+.App {
+    text-align: center;
+
+    .App-main {
+        background-color: #0062be;
+        min-height: 100vh;
+        color: white;
+
+        .App-logo {
+            max-height: 678px;
+            width: 100%;
+            max-width: 1382px;
+        }
+
+        .App-link {
+            color: #61dafb;
+        }
+    }
+}
+  
+//-- Header --//
+  
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    max-height: 300px;
+    font-family: 'Anek Malayalam', sans-serif;
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 100%;
+            max-height: 150px;
+        }
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            gap: 40px;
+
+            li {
+                list-style: none;
+                font-family: monospace;
+                font-weight: bolder;
+                font-size: 20px;
+                color: #1e1e1e;
+
+                a {
+                    text-decoration: none;
+                }
+
+            }
+        }
+    }
+
+    .btn-group {
+        align-items: center;
+
+        .btn-dark {
+            border: 2px solid white !important;
+        }
+    }
+
+    .cartIcon {
+        display: flex;
+        align-items: center;
+    }
+
+    .searchForm {
+        display: flex;
+        align-items: center;
+    }
+}
+  
+//-- Product List --//
+
+
+.card {
+    position: initial !important;
+    align-items: center;
+    max-width: 30% !important;
+    font-family: 'Anek Malayalam', sans-serif;
+    border: 2px solid rgba(0,0,0,.125) !important;
+    max-width: 270px !important;
+    margin-bottom: 7px;
+
+    .cardImg {
+        img {
+            width: 100%;
+        }
+    }
+    .cardHeader {
+        text-align: center;
+    }
+}
+
+//-- Card Details --//
+
+.cardDetail {
+    background-color: #0062be;
+    display: flex;
+    color: white;
+    font-family: 'Anek Malayalam', sans-serif;
+
+    .textDetail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 10px;
+
+        .cardHeader {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+
+            .form-select {
+                width: 20%;
+            }
+
+            .sizes {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        .withoutStock {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
+
+// Cart
+
+.cartContainer {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    font-family: Roboto;
+    z-index: 2;
+  
+    .buttonCartContainer {
+      position: absolute;
+      margin-right: 20px;
+  
+      img {
+        height: 25px;
+        margin-right: 2px;
+      }
+    }
+
+    .buttonCart {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    .cart {
+        position: absolute;
+        margin-right: 20px;
+        border-radius: 30px;
+        max-width: 500px;
+        width: 100%;
+        background-color: #222222;
+        color: white;
+    
+        h2 {
+          text-align: center;
+          font-weight: bold;
+          margin-top: 35px;
+        }
+    
+        .cartEmpty {
+          text-align: center;
+          margin-top: 5px;
+          font-size: 14px;
+        }
+    
+        .total {
+          text-align: center;
+          font-weight: bold;
+          margin-top: 15px;
+          padding-bottom: 35px;
+        }
+    
+        .productsContainer{
+          max-height: 500px;
+          overflow-y: scroll;
+          margin-top: 5px;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  ::-webkit-scrollbar:vertical {
+    width: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+  }
+
+  // Items Cart 
+
+  .cartItem {
+  height: 100px;
+  background-color: #3a3a3a;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+
+  img {
+    height: 65px;
+    border-radius: 5px;
+  }
+
+  .dataContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 15px 0;
+
+    .left {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+          font-weight: bold;
+          font-size: 13px;
+      }
+
+      .buttons {
+           display: flex;
+           gap: 5px;
+
+           button {
+               border: none;
+               cursor: pointer;
+               font-size: 12px;
+               padding: 3px 5px;
+               border-radius: 5px;
+               font-weight: bold;
+               color: #222222;
+           }
+      }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        div {
+            background-color: #FB3939;
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+  }
+}
+
+// Checkout Page
+
+.text-color {
+    --tw-text-opacity: 1;
+    color: rgb(48 48 48/var(--tw-text-opacity));
+    letter-spacing: .22em;
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+.text-family {
+    --tw-text-opacity: 1;
+    color: rgb(48 48 48/var(--tw-text-opacity));
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+// Footer
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-top: 0.1rem solid lightgrey;
+
+    .copyright {
+        padding-top: 1rem;
+        text-align: center;
+
+        a {
+          text-decoration: none;
+          border: none;
+          font-weight: bold;
+          color: lightgray;
+          font-size: 20px;
+          font-family: monospace;
+        }
+    
+        p {
+            font-size: small;
+            color: grey;
+            margin-bottom: 0;
+        }
+
+        i {
+            padding-left: 5px;
+        }
+        
+        span {
+            font-size: small;
+            color: grey;
+    
+            .heart {
+                display: inline-flex;
+                animation-name: beat;
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+    
+                @keyframes beat {
+                    0% { transform: scale(0.9); 
+                    }
+                    5% { transform: scale(1); 
+                    }
+                    10% { transform: scale(0.9); 
+                    }
+                    15% { transform: scale(1.1); 
+                    }
+                    50% { transform: scale(0.9); 
+                    }
+                    100% { transform: scale(0.9); 
+                    }
+                }
+            }
+        }
+    
+    }    
+}
+
+// Login
+
+.modal-body{
+    width: 80%;
+    margin-left: 10%;
+    font-family: 'Roboto', sans-serif;
+  
+    .buttons_modal{
+      display: flex;
+      flex-direction: column;
+  
+      .btn_facebook,
+      .btn_google,
+      .btn_email {
+        margin-bottom: 1rem;
+        padding: 1em;
+        border-radius: 30px;
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+  
+        a {
+          text-decoration: none;
+          border: none;
+          font-weight: bold;
+          color: black;
+          font-size: 16px;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+  
+      .btn_facebook{
+        background-color: #006ab1;
+
+        a {
+            color: white;
+        }
+      }
+  
+      .btn_google{
+        color: #000;
+        background-color: #E7E7E7;
+      }
+  
+      .btn_email{
+        border: 1px solid #06A106;
+        color: #06A106;
+        background-color: #ffffff;
+      }
+  
+    }
+    a, p {
+      font-family: 'Roboto', sans-serif;
+    }
+}
+  
+.family {
+    font-family: 'Roboto', sans-serif;
+}
+
+

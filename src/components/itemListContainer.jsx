@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Card from './card';
 import logo from '../nike_logo.png';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore, query, where, limit } from 'firebase/firestore';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 export const useFetch = () => {
 
@@ -15,7 +15,7 @@ export const useFetch = () => {
         if (catId) {
         const db = getFirestore()
         const queryCollection = collection(db, "products")
-        const queryCollectionFilter = query(queryCollection, where("brand_name","==", catId), limit(5))
+        const queryCollectionFilter = query(queryCollection, where("brand_name","==", catId))
         getDocs(queryCollectionFilter)
         .then(data => setDetail( data.docs.map(item => ({id: item.id, ...item.data()}))))
         setLoading(true)
@@ -63,7 +63,6 @@ function ProductsList() {
                     id={shoes.id} 
                     name={shoes.name} 
                     grid_picture_url={shoes.grid_picture_url} 
-                    category={shoes.category}
                     retail_price_cents={shoes.retail_price_cents}/>
                     })
                 }    

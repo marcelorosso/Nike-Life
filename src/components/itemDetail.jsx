@@ -9,10 +9,8 @@ const Details = (item) => {
 
   const {addItemsToCart} = useContext(CartContext)
 
-  // Use states que permiten hacer desaparecer el contador si se agregó el item al carrito, mostrar detalles y beneficios
+  // Shows or not the item count on the cart picture depending on if the items is/isn't in the cart
   const [isInCart, setIsInCart] = useState(false)
-  // const [showDetails, setShowDetails] = useState(false)
-  // const [showBenefits, setShowBenefits] = useState(false)
 
   // Add product to cart (The item quantity must be managed by cart pop-up page)
   const onAdd = (amount) => {
@@ -82,7 +80,7 @@ const Details = (item) => {
             </div>
           </div><br/>
           <div>
-            {/* Si se agregó el item al carrito, se muetra el botón finalizar compra, si no, el contador */}
+            {/* If the product was added in the cart, the checkout button will appears, otherwise, the counter will be shown*/}
             {isInCart ? (
                             <div className="d-flex flex-column space-y-8 mt-6">
                                 <Link to='/checkout'>

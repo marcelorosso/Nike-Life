@@ -10,9 +10,8 @@ const Card = (props) => {
         <img src={props.grid_picture_url} alt="productImages" />
         </div>
         <div className="cardHeader">
-            <h2>{props.name}</h2>
-            <p>{props.category}</p>
-            <p className="price">{formatPrice(props.retail_price_cents)}</p>
+            <h4>{props.name}</h4>
+            <p className="price">Price: {formatPrice(props.retail_price_cents)}</p>
             <Link to={`/details/${props.id}`}><button className="btn btn-dark">Details</button></Link>
         </div><br/>
     </div>
