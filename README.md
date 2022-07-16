@@ -48,18 +48,18 @@ The GitHub Pages site is currently being built from the **gh-pages** branch. (Bu
 ## Deploy Preview Videos
 
 * Page Overview:<br>
-![UniConverter_20220502210751-min](https://giphy.com/gifs/Ak0an8LymJYmhHHsSA)<br>
+<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
 
 
 * Selecting products in Store:<br>
-![UniConverter_20220502211708-min](https://giphy.com/gifs/Ak0an8LymJYmhHHsSA)<br>
+<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
 
 
 * Charging Products into the cart and going on (Checkout Page):<br>
-![UniConverter_20220502213450-min](https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J)
+<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
 
 * Purchase finalized and showing the number of ID (Purchase Order *Firebase*):<br>
-![UniConverter_20220502213450-min](https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J)
+<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
 
 ## Developer/Course Information
 
