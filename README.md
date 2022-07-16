@@ -1,5 +1,7 @@
 # Nike-Life React Project
 
+<img src="https://github.com/marcelorosso/Nike-Life/blob/master/src/logo_page.jpeg" width=250 >
+
 This project was created using react-app. It´s a sneakers store which everyone can buy shoes from Nike branch (limited edition, designed by known people) totally on-line (without physical location).
 
 * Page GitHub Link: **https://marcelorosso.github.io/Nike-Life/**
