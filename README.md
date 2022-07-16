@@ -48,18 +48,18 @@ The GitHub Pages site is currently being built from the **gh-pages** branch. (Bu
 ## Deploy Preview Videos
 
 * Page Overview:<br>
-<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
+<img src="https://github.com/marcelorosso/Nike-Life/blob/master/screenshot/page_overview.gif" width=700 >
 
 
 * Selecting products in Store:<br>
-<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
+<img src="https://github.com/marcelorosso/Nike-Life/blob/master/screenshot/selecting_products.gif" width=700 >
 
 
 * Charging Products into the cart and going on (Checkout Page):<br>
-<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
+<img src="https://github.com/marcelorosso/Nike-Life/blob/master/screenshot/charging_products.gif" width=700 >
 
 * Purchase finalized and showing the number of ID (Purchase Order *Firebase*):<br>
-<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
+<img src="https://github.com/marcelorosso/Nike-Life/blob/master/screenshot/purchase_finalized.gif" width=700 >
 
 ## Developer/Course Information
 
