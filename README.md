@@ -35,6 +35,9 @@ You may also see any lint errors in the console.
 
 The GitHub Pages site is currently being built from the **gh-pages** branch. (Built by using npm run deploy)
 
+* [React-Router](https://www.npmjs.com/package/react-router-dom) Version 6.3.0
+  `npm i react-router-dom`
+
 ## Additional Library and Framework
 
 * [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - "Index Script"
@@ -45,18 +48,18 @@ The GitHub Pages site is currently being built from the **gh-pages** branch. (Bu
 ## Deploy Preview Videos
 
 * Page Overview:<br>
-![UniConverter_20220502210751-min](https://drive.google.com/file/d/1EaUQeRB0hjWGM_bw0IDGwyvmdh4lnxu_/view?usp=sharing)<br>
+<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
 
 
 * Selecting products in Store:<br>
-![UniConverter_20220502211708-min](https://drive.google.com/file/d/17gF_8pvjYEeErrRk5Mkz0rKhz7MPhpvk/view?usp=sharing)<br>
+<img src="https://giphy.com/gifs/Ak0an8LymJYmhHHsSA" width=700 >
 
 
 * Charging Products into the cart and going on (Checkout Page):<br>
-![UniConverter_20220502213450-min](https://drive.google.com/file/d/1_ryQYZKxxrbjSLaRPMIypMR1KFE3S3f9/view?usp=sharing)
+<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
 
 * Purchase finalized and showing the number of ID (Purchase Order *Firebase*):<br>
-![UniConverter_20220502213450-min](https://drive.google.com/file/d/1dIJgZi9Iws83zBTpZuAIMo1tisdMjgOt/view?usp=sharing)
+<img src="https://giphy.com/gifs/Uq3zVbIWtfuwYKVM0J" width=700 >
 
 ## Developer/Course Information
 
