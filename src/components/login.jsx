@@ -17,6 +17,12 @@ const loginSweet = () => {
       <button class="btn_facebook"><a href="https://www.facebook.com/">Login with Facebook</a></button>
       <button class="btn_google"><a href="https://mail.google.com/">Login with Google</a></button>
       <button class="btn_email" id="btn_email"><a href="">Login with your Nike-Life Account<a></button>
+      <div id="register">
+         <h3>Registro de usuarios</h3>
+         <input id="email" type="email" placeholder="Ingrese email">
+         <input id="contrasena" type="password" placeholder="Ingrese contraseña">
+         <button onclick="registrar()">Registrar</button>
+    </div>
     </div>
     <div class="link_form_registro">
       <p>Don't have your account yet? <a href="">Sign Up here</a></p>
