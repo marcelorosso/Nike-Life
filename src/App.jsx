@@ -28,9 +28,4 @@ function App() {
   );
 }
 
-function registrar(){
-    console.log('clic');
-}
-
-
 export default App;
